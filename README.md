@@ -1,4 +1,4 @@
-# easyform v1.0 stable
+# easyform v1.1 stable
 
 IMPORTANT:
 This script needs jquery to run and the jquery-ui to show datepickers.
@@ -34,10 +34,9 @@ TOOLS:
 "efOwnFunction":
 Definition: Is the function you can call when the form is validated.
 Usage: This function needs to have a parameter returned with an object with 'type' and 'code' properties ex.: 
-	response_type_code = {'type':'success','code':'s000'}
+	response_type_code = {'type':'success','code':'d000'} or response_type_code = {'type':'error','code':'d000'}
 	return response_type_code;
-
+	
 "form_validations":
 Definition: Is an object with all the messages you could need to feedback the user.
 Usage:  There are some necessary errors with code relation, but you can create all you need more. You only need to assign a code to the message and you can use it wherever you want.
-*/
