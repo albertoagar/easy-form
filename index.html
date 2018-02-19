@@ -5,70 +5,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title></title>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="scripts.js"></script>
-		<script>
-			var form_validations = {
-					"success" : {
-						"s000":"Sus datos se han actualizado correctamente",
-						"c000":"Se ha creado el nuevo registro."
-					},
-					"error" : {
-						"x000":"There are some incorrect fields. Please, correct them.",
-						"x001":"Server error. Form not sent.",
-						"u000":"Imposible actualizar datos. No hay registro en nuestra base de datos que coincidan con sus datos de referencia.",
-						"e000":"Empty field",
-						"e001":"Wrong field. Field must be text.",
-						"e002":"Wrong field. Maximum 500 characters.",
-						"e003":"Wrong field. Must have the format 'mail@mail.mail'",
-						"e004":"Wrong field. It must contain a date."
-					}
-			};
-			var form_validations = {
-					"success" : {
-						"s000":"Sus datos se han actualizado correctamente.",
-						"c000":"Se ha creado el nuevo registro."
-					},
-					"error" : {
-						"x000":"Hay errores en el formulario. Por favor, reviselo.",
-						"x001":"Fallo en el servidor. Error en el envío.",
-						"u000":"Imposible actualizar datos. No hay registro en nuestra base de datos que coincidan con sus datos de referencia.",
-						"e000":"Campo vacío",
-						"e001":"Campo incorrecto. Debe ser texto.",
-						"e002":"Campo incorrecto. Máximo 500 caracteres.",
-						"e003":"Campo incorrecto. Debe tener formato 'mail@mail.mail'",
-						"e004":"Campo incorrecto. Debe contener una fecha."
-					}
-			};
-		</script>		
 	</head>
     <body>
 		<main>
 		
-		<form>
-			<label class="label-field">
-			mail
-			<input type="text" name="email" id="email" data-validtype="3">
-			</label>
-			<br>
-			<label class="label-field">
-			firstname
-			<input type="text" name="firstname" id="firstname" data-validtype="1">
-			</label>
-			<br>
-			<label class="label-field">
-			lastname
-			<input type="text" name="lastname" id="lastname" data-validtype="1">
-			</label>
-			<br>
-			<label class="label-field">born
-			<input type="text" name="born" id="born" data-validtype="4">	
-			</label>
-
-			<button type="submit">Enviar</button>		
-			<div class="js-response"></div>
-		</form>
+			<form action="#" class="easyform" data-ef-form-type="ownfunction">
+				<input type="text" name="email" id="email" data-ef-valid-type="onlytext required">
+				<br>
+				<input type="text" name="firstname" id="firstname" data-ef-valid-type="onlytext">
+				<br>
+				<input type="text" name="lastname" id="lastname" data-ef-valid-type="onlytext">
+				<br>
+				<input type="text" name="born" id="born" data-ef-valid-type="date required" data-ef-dp-type="untiltoday">
+				<br>
+				<textarea name="description" id="description" data-ef-valid-type="maxletter_5 required"></textarea>
+				<br>
+				<button type="submit">Enviar</button>		
+				<div class="ef-response"></div>
+			</form>
 		
-testtttttt
 		</main>
 	</body>
 </html>
