@@ -127,15 +127,17 @@ $(document).ready(function(){
 							});
 						}
 						break;
+					default:
 							response = efOwnFunction();
 							response_type = response.type;
 							response_code = response.code;
-							if(response_type!='success'){
+							if(response_type=='success'){
 								o[0].reset();
 							}
 						break;
 				}
 			}
+			o_response.removeClass('ef-success').removeClass('ef-error');
 			if(response_type=='success'){o_response.addClass('ef-success').css('color','green')}else{o_response.css('color','red').addClass('ef-error')}
 			o_response.html(form_validations[response_type][response_code]);
 		});
